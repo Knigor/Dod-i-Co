@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 import LkView from '../views/LkView'
-import MainView from '../views/MainView.vue'
 import RegistrationView from '../views/RegistrationView.vue'
 import AuthView from '../views/AuthView.vue'
 import SigmaView from '../views/SigmaView.vue'
@@ -20,12 +19,6 @@ const routes = [
     path: '/lk',
     name: 'lk',
     component: LkView
-  },
-  {
-    path: '/main',
-    name: 'MainView',
-    component: MainView
-
   },
   {
     path: '/auth',
