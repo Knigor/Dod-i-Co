@@ -5,40 +5,40 @@
         <HeaderComponents/>
       </div>
 
-<!--      <div class="lk-page" ref="myElement">-->
-<!--        <div>-->
-<!--          <h1 class="lk-page-heading">Личный кабинет</h1>-->
-<!--          <div class="input-container ic1">-->
-<!--            <input id="pass" class="input input2" type="text" placeholder=" " />-->
-<!--            <div class="cut-11"></div>-->
-<!--            <label for="pass" class="placeholder">Введите новый пароль</label>-->
-<!--          </div>-->
-<!--        </div>-->
+      <div class="lk-page" ref="myElement">
+        <div>
+          <h1 class="lk-page-heading">Личный кабинет</h1>
+          <div class="input-container ic1">
+            <input id="pass" class="input input2" type="text" placeholder=" " />
+            <div class="cut-11"></div>
+            <label for="pass" class="placeholder">Введите новый пароль</label>
+          </div>
+        </div>
 
-<!--        <div>-->
-<!--          <h2 class="lk-page-heading2">Смена пароля</h2>-->
-<!--          <div class="input-container ic1">-->
-<!--            <input id="password" class="input input2" type="text" placeholder=" " />-->
-<!--            <div class="cut-11"></div>-->
-<!--            <label for="password" class="placeholder">Введите новый пароль</label>-->
-<!--          </div>-->
-<!--          <div class="input-container ic2">-->
-<!--            <input id="passrep" class="input input2" type="text" placeholder=" " />-->
-<!--            <div class="cut-12"></div>-->
-<!--            <label for="passrep" class="placeholder">Повторите пароль</label>-->
-<!--          </div>-->
-<!--        </div>-->
+        <div>
+          <h2 class="lk-page-heading2">Смена пароля</h2>
+          <div class="input-container ic1">
+            <input id="password" class="input input2" type="text" placeholder=" " />
+            <div class="cut-11"></div>
+            <label for="password" class="placeholder">Введите новый пароль</label>
+          </div>
+          <div class="input-container ic2">
+            <input id="passrep" class="input input2" type="text" placeholder=" " />
+            <div class="cut-12"></div>
+            <label for="passrep" class="placeholder">Повторите пароль</label>
+          </div>
+        </div>
 
-<!--        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; padding: 20px 0">-->
-<!--          <button-->
-<!--              style="background-color: #525252"-->
-<!--              class="lk-page-button1"-->
-<!--              @click="toggleRoleSettings">Настройка роли</button>-->
-<!--          <button style="background-color: #F40000;" class="lk-page-button2">Выйти из профиля</button>-->
-<!--        </div>-->
-<!--      </div>-->
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; padding: 20px 0">
+          <button
+              style="background-color: #525252"
+              class="lk-page-button1"
+              @click="toggleRoleSettings">Настройка роли</button>
+          <button style="background-color: #F40000;" class="lk-page-button2">Выйти из профиля</button>
+        </div>
+      </div>
 
-      <div class="lk-add" ref="myElement2" style="display: visible;">
+      <div class="lk-add" ref="myElement2" style="display: none;">
         <div class="lk-add-left">
           <div class="lk-add-subheading">
             <h1 class="lk-left-heading">Выбор роли</h1>
