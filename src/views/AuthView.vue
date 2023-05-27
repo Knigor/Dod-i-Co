@@ -108,7 +108,6 @@ export default {};
   display: flex;
   flex-direction: column;
   gap: 9px;
-  padding-right: 36px;
 }
 
 .input-registration {

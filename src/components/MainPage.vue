@@ -253,9 +253,7 @@ export default {
   margin: 0.78vw 0;
 }
 
-a:hover{
 
-}
 
 a{
   font-family: 'Montserrat';

@@ -4,7 +4,9 @@
       <div class="header-registration">
         <div class="name-into">
           <RouterLink to="/auth"><p class="login-text">Вход</p></RouterLink>
-          <RouterLink to="/registration"><p class="registration-text">Регистрация</p></RouterLink>
+          <RouterLink to="/registration"
+            ><p class="registration-text">Регистрация</p></RouterLink
+          >
         </div>
       </div>
       <div class="main-registration">
@@ -30,9 +32,9 @@
         </div>
       </div>
       <div class="footer-registration">
-        <button class="submit">
+      <RouterLink to="/auth"><button class="submit">
           <p class="button-registration">Регистрация</p>
-        </button>
+        </button></RouterLink>  
       </div>
     </div>
   </div>
@@ -44,9 +46,15 @@ import { RouterLink } from "vue-router";
 export default { components: { RouterLink } };
 </script>
 
-<style lang="scss" scoped>
+<style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+Gujarati&family=Noto+Sans:wght@500&family=Oswald:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&family=Noto+Sans+Gujarati&family=Noto+Sans:wght@500&family=Oswald:wght@400;500;700&display=swap");
+
+.header-registration {
+  display: flex;
+  margin: -40px;
+  padding-top: 31px;
+}
 
 .footer-registration {
   padding-top: 20px;
@@ -95,6 +103,7 @@ export default { components: { RouterLink } };
 
   text-align: center;
   text-transform: uppercase;
+  color: #000000;
 }
 
 .registration-text {
@@ -107,6 +116,8 @@ export default { components: { RouterLink } };
 
   text-align: center;
   text-transform: uppercase;
+
+  color: #000000;
 }
 
 .name-into {
@@ -118,7 +129,7 @@ export default { components: { RouterLink } };
   display: flex;
   flex-direction: column;
   gap: 9px;
-  padding-right: 36px;
+  
 }
 
 .input-registration {
@@ -142,6 +153,7 @@ export default { components: { RouterLink } };
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  padding-top: 10px;
 }
 
 .button-footer {
@@ -266,8 +278,6 @@ export default { components: { RouterLink } };
 .input:not(:placeholder-shown) ~ .placeholder {
   color: #808097;
 }
-
-
 
 .submit {
   background: #525252;

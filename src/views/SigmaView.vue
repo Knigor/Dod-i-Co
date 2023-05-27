@@ -3,7 +3,8 @@
     <div class="sigma-header">
       <img alt="Картинка" />
       <nav>SIGMAGPT</nav>
-      <nav>Главная</nav>
+      <RouterLink to="/"><nav>Главная</nav></RouterLink>
+      
       <nav>Личный кабинет</nav>
       <img alt="Картинка" />
       <p>{{ Login }}</p>
@@ -12,19 +13,22 @@
       <p>dsadsad</p>
     </div>
     <div class="sigma-footer">
-      <p>dsadsad</p>
+      <p style="color: purple">Роль</p>
     </div>
   </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-  name: "SigmaView",
-  data() {
-    return {
-      Login: "ACORZ",
-    };
-  },
+    name: "SigmaView",
+    data() {
+        return {
+            Login: "ACORZ",
+        };
+    },
+    components: { RouterLink }
 };
 </script>
 
@@ -32,13 +36,12 @@ export default {
 .sigma {
   display: flex;
   flex-direction: column;
-  background: #b9b8e4 center no-repeat;
+  background-color: #b9b8e4;
   background-size: cover;
-  width: 100vw;
-  min-height: 100vh; /* Заменил height на min-height для корректного расчета высоты содержимого */
+  width: 100%;
+  min-height: 100%; /* Заменил height на min-height для корректного расчета высоты содержимого */
   align-items: center;
   gap: 32px;
-  margin-bottom: 32px; /* Добавил отступ внизу */
 }
 
 .sigma-header {
@@ -48,7 +51,7 @@ export default {
   align-items: center;
   padding: 24px 32px;
   gap: 48px;
-  width: 100%; /* Установил ширину в 100% */
+  width: 1274px;
   height: 88px;
   background: #ffffff;
   /* Drop Shadow */
@@ -57,7 +60,7 @@ export default {
 }
 
 .sigma-main {
-  width: 100%; /* Установил ширину в 100% */
+  width: 1274px; 
   height: 832px;
   background: #ffffff;
   border-radius: 16px;
@@ -65,15 +68,15 @@ export default {
 
 .sigma-footer {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 24px 32px;
-  gap: 10px;
-  background: #ffffff;
-  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.17);
-  border-radius: 15px;
-  width: 100%; /* Установил ширину в 100% */
-  height: 72px;
-  padding-bottom: 20px;
+    flex-direction: row;
+    align-items: center;
+    /* padding: 24px 32px; */
+    /* gap: 10px; */
+    background: #ffffff;
+    box-shadow: 0px 4px 17px rgb(0 0 0 / 17%);
+    border-radius: 15px;
+    width: 1274px;
+    height: 72px;
+    padding-bottom: 46px;
 }
 </style>
