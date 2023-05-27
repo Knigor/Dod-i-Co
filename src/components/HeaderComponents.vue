@@ -81,6 +81,7 @@ export default {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   width: 100%;
+  max-width: 1000px;
 }
 
 /* Медиа-запрос для экранов шириной меньше 768 пикселей */

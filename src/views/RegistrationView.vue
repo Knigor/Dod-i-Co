@@ -13,7 +13,7 @@
         <div class="input-container ic1">
           <input id="firstname" class="input" type="text" placeholder=" " />
           <div class="cut-1"></div>
-          <label for="firstname" class="placeholder">E-mail</label>
+          <label for="firstname" class="placeholder">Введите почту</label>
         </div>
         <div class="input-container ic2">
           <input id="firstname" class="input" type="text" placeholder=" " />
@@ -23,17 +23,12 @@
         <div class="input-container ic2">
           <input id="firstname" class="input" type="password" placeholder=" " />
           <div class="cut-3"></div>
-          <label for="firstname" class="placeholder">Пароль</label>
-        </div>
-        <div class="input-container ic2">
-          <input id="firstname" class="input" type="password" placeholder=" " />
-          <div class="cut-4"></div>
-          <label for="firstname" class="placeholder">Подтвердите пароль</label>
+          <label for="firstname" class="placeholder">Придумайте пароль</label>
         </div>
       </div>
       <div class="footer-registration">
       <RouterLink to="/auth"><button class="submit">
-          <p class="button-registration">Регистрация</p>
+          <p class="button-registration">Зарегистрироваться</p>
         </button></RouterLink>  
       </div>
     </div>
@@ -49,6 +44,11 @@ export default { components: { RouterLink } };
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+Gujarati&family=Noto+Sans:wght@500&family=Oswald:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&family=Noto+Sans+Gujarati&family=Noto+Sans:wght@500&family=Oswald:wght@400;500;700&display=swap");
+
+p{
+  padding: 0;
+}
+
 
 .header-registration {
   display: flex;
@@ -69,6 +69,9 @@ export default { components: { RouterLink } };
   align-items: center;
   justify-content: center;
 }
+
+
+
 
 .window-registration {
   display: flex;
@@ -120,9 +123,25 @@ export default { components: { RouterLink } };
   color: #000000;
 }
 
+.registration-text {
+  position: relative;
+}
+
+.registration-text:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #E3C7FF;
+}
+
+
 .name-into {
   display: flex;
   gap: 92px;
+  margin: 32px;
 }
 
 .main-registration {
@@ -153,7 +172,7 @@ export default { components: { RouterLink } };
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  padding-top: 10px;
+  
 }
 
 .button-footer {
@@ -206,7 +225,7 @@ export default { components: { RouterLink } };
   top: -13px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 58px;
+  width: 103px;
 }
 .cut-2 {
   background-color: #e3c7ff;
@@ -228,7 +247,7 @@ export default { components: { RouterLink } };
   top: -13px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 58px;
+  width: 134px;
 }
 .cut-4 {
   background-color: #e3c7ff;

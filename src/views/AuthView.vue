@@ -18,7 +18,7 @@
         <div class="input-container ic2">
           <input id="firstname" class="input" type="password" placeholder=" " />
           <div class="cut-3"></div>
-          <label for="firstname" class="placeholder">Пароль</label>
+          <label for="firstname" class="placeholder">Введите пароль</label>
         </div>
       </div>
       <div class="footer-registration">
@@ -37,6 +37,27 @@ export default {};
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+Gujarati&family=Noto+Sans:wght@500&family=Oswald:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&family=Noto+Sans+Gujarati&family=Noto+Sans:wght@500&family=Oswald:wght@400;500;700&display=swap");
+
+
+p{
+  padding: 0;
+}
+
+
+.login-text {
+  position: relative;
+}
+
+.login-text::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #E3C7FF;
+}
+
 
 .footer-registration {
   padding-top: 20px;
@@ -102,6 +123,7 @@ export default {};
 .name-into {
   display: flex;
   gap: 92px;
+  margin: 32px;
 }
 
 .main-registration {
