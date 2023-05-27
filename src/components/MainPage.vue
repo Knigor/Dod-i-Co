@@ -204,7 +204,6 @@ export default {
 }
 
 .scrollable-block {
-  overflow-y: auto;
   height: 100vh;
   background: linear-gradient(180deg, #C6C6C6 0%, rgba(160, 160, 160, 0) 100%);
   display: grid;
@@ -266,7 +265,7 @@ a{
   border-radius: 10px;
   text-align: center;
   border: none;
-  padding: 0.26vw 2vw;
+  padding: 0.26vw 1.5vw;
   text-decoration: none;
   color: #000;
 }
