@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import MainView from '../views/MainView.vue'
+import RegistrationView from '../views/RegistrationView.vue'
+import AuthView from '../views/AuthView.vue'
+import SigmaView from '../views/SigmaView.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +14,31 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  {
+    path: '/main',
+    name: 'MainView',
+    component: MainView
+
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component: AuthView
+
+  },
+  {
+    path: '/registration',
+    name: 'registration',
+    component: RegistrationView
+
+  },
+  {
+    path: '/sigma',
+    name: 'sigma',
+    component: SigmaView
+
+  },
+
   {
     path: '/about',
     name: 'about',
