@@ -3,9 +3,10 @@
     <div class="main-page"
          :style="{ backgroundImage:
        `url(${images[currentImageIndex]})` }">
-      <div class="main-page-p">
+      <div class="main-page-p"
+           ref="myElement">
         <h1 class="main-heading">SIGMAGPT -</h1>
-        <p>
+        <p class="main-text">
           Исскуственный <br> интелект,
           <br>который <br>
           понимает вас
@@ -122,16 +123,16 @@ export default {
     },
     nextImage() {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-    }
+    },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     this.startSlideShow();
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
     this.stopSlideShow();
-  }
+  },
 };
 </script>
 
@@ -140,12 +141,31 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 @media (max-width: 850px) and (min-width: 200px) {
+
   .buttons{
     flex-direction: column;
     row-gap: 15px;
   }
+
   a{
     width: 100%;
+  }
+
+  .scrollable-block{
+    padding: 1.56vw 0;
+  }
+
+  .main-text{
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .main-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -196,10 +216,10 @@ export default {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  font-size: 2.1vw;
-  line-height: 4vw;
+  font-size: calc(2.1vw + 10px);
+  line-height: calc(3vw + 20px);
   text-align: center;
-  width: 70%;
+  width: 80%;
 
   color: #0D082C;
 }
@@ -252,8 +272,6 @@ export default {
   margin: 0.78vw 0;
 }
 
-
-
 a{
   font-family: 'Montserrat';
   font-style: normal;
@@ -276,7 +294,7 @@ a{
   column-gap: 2.60vw;
 }
 
-p{
+.main-text{
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
