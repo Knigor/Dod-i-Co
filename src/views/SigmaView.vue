@@ -16,11 +16,6 @@ import HeaderComponents from '../components/HeaderComponents.vue'
 
 export default {
     name: "SigmaView",
-    data() {
-        return {
-            Login: "ACORZ",
-        };
-    },
     components: { HeaderComponents }
 };
 </script>
@@ -35,15 +30,16 @@ export default {
   min-height: 100%; /* Заменил height на min-height для корректного расчета высоты содержимого */
   align-items: center;
   gap: 32px;
+  border: 1px #000 solid;
+  padding: 0 50px;
 }
-
-
 
 .sigma-main {
   width: 1274px; 
   height: 832px;
   background: #ffffff;
   border-radius: 16px;
+  width: 100%;
 }
 
 .sigma-footer {
@@ -58,5 +54,6 @@ export default {
     width: 1274px;
     height: 72px;
     padding-bottom: 46px;
+    width: 100%;
 }
 </style>
