@@ -137,9 +137,6 @@ export default {
 
 
 <style>
-<<<<<<< HEAD
-
-=======
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 @media (max-width: 850px) and (min-width: 200px) {
@@ -292,5 +289,4 @@ p{
   text-align: center;
   padding-bottom: 3vw;
 }
->>>>>>> svyt
 </style>
