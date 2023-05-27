@@ -1,14 +1,6 @@
 <template>
   <div class="sigma">
-    <div class="sigma-header">
-      <img alt="Картинка" />
-      <nav>SIGMAGPT</nav>
-      <RouterLink to="/"><nav>Главная</nav></RouterLink>
-      
-      <nav>Личный кабинет</nav>
-      <img alt="Картинка" />
-      <p>{{ Login }}</p>
-    </div>
+    <HeaderComponents/>
     <div class="sigma-main">
       <p>dsadsad</p>
     </div>
@@ -19,16 +11,12 @@
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
+
+import HeaderComponents from '../components/HeaderComponents.vue'
 
 export default {
     name: "SigmaView",
-    data() {
-        return {
-            Login: "ACORZ",
-        };
-    },
-    components: { RouterLink }
+    components: { HeaderComponents }
 };
 </script>
 
@@ -42,21 +30,8 @@ export default {
   min-height: 100%; /* Заменил height на min-height для корректного расчета высоты содержимого */
   align-items: center;
   gap: 32px;
-}
-
-.sigma-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 24px 32px;
-  gap: 48px;
-  width: 1274px;
-  height: 88px;
-  background: #ffffff;
-  /* Drop Shadow */
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 16px;
+  border: 1px #000 solid;
+  padding: 0 50px;
 }
 
 .sigma-main {
@@ -64,6 +39,7 @@ export default {
   height: 832px;
   background: #ffffff;
   border-radius: 16px;
+  width: 100%;
 }
 
 .sigma-footer {
@@ -78,5 +54,6 @@ export default {
     width: 1274px;
     height: 72px;
     padding-bottom: 46px;
+    width: 100%;
 }
 </style>
