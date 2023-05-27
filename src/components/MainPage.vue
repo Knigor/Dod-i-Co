@@ -135,6 +135,7 @@ export default {
 };
 </script>
 
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
@@ -251,9 +252,7 @@ export default {
   margin: 0.78vw 0;
 }
 
-a:hover{
 
-}
 
 a{
   font-family: 'Montserrat';
