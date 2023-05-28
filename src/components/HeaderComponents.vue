@@ -5,8 +5,12 @@
       <nav class="header-nav-text">SIGMAGPT</nav>
     </div>
 
-    <nav class="header-nav-text">Главная</nav>
-    <nav class="header-nav-text">Личный кабинет</nav>
+    <RouterLink class="header-link" to="/">
+      <span class="header-nav-text2">Главная</span>
+    </RouterLink>
+    <RouterLink class="header-link" to="/lk">
+      <span class="header-nav-text2">Личный кабинет</span>
+    </RouterLink>
     <div class="user-logo-gpt">
       <img src="../assets/user-logo.svg" alt="Картинка" />
       <p class="header-nav-text-login">{{ Login }}</p>
@@ -51,20 +55,29 @@ export default {
   color: #000000;
 }
 
-.header-nav-text {
+.header-nav-text, .header-nav-text2 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
-
   display: flex;
   align-items: center;
   text-align: center;
   text-transform: uppercase;
-
   color: #000000;
+  justify-content: center;
+}
+
+.header-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.header-link:hover .header-nav-text2:after {
+  width: 100%;
+  border-bottom: 2px solid #000;
+  padding-bottom: 50px;
 }
 
 .sigma-header {

@@ -11,7 +11,6 @@
           <br>который <br>
           понимает вас
         </p>
-        <div></div>
         <div class="buttons">
           <RouterLink to="/sigma"><a>Начать разговор</a></RouterLink>
           <RouterLink to="/registration"><a>Зарегистрироваться</a></RouterLink>
@@ -142,6 +141,58 @@ export default {
 
 @media (max-width: 850px) {
 
+  .scrollable-block .scrollable-block-under2 p {
+    text-align: center;
+  }
+
+  .scrollable-block .scrollable-block-under {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    width: 80%;
+  }
+
+  .scrollable-block .scrollable-block-under2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .scrollable-block{
+    padding: 20px 0;
+  }
+
+  .main-page-p .main-heading{
+    width: 80%;
+    font-size: 25px;
+  }
+
+  .main-page .main-page-p{
+    display: grid;
+    row-gap: 50px;
+  }
+
+  .main-page-p .main-text{
+    font-size: 30px;
+    line-height: 50px;
+  }
+
+  .main-page-p {
+    align-self: center; /* Center on screens smaller than 850px */
+    margin-right: 0; /* Remove the right margin */
+  }
+
+  .buttons{
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  a{
+    font-size: 4vw;
+    width: 100%;
+  }
 }
 
 .scrollable-block-under2 p{
@@ -251,7 +302,7 @@ a{
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  font-size: 1.2vw;
+  font-size: 20px;
   line-height: 37px;
   background: #FFFFFF;
   border-radius: 10px;

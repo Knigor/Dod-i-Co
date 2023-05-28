@@ -29,12 +29,11 @@
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; padding: 20px 0">
+        <div class="lk-pagep">
           <button
-              style="background-color: #525252"
               class="lk-page-button1"
               @click="toggleRoleSettings">Настройка роли</button>
-          <button style="background-color: #F40000;" class="lk-page-button2">Выйти из профиля</button>
+          <button class="lk-page-button2">Выйти из профиля</button>
         </div>
       </div>
 
@@ -52,6 +51,8 @@
             <div>{{ parsedData }}</div>
           </div>
           <button class="add-role">Добавить роль</button>
+          <button class="back-button"
+                  @click="returnToPage">Вернуться назад</button>
           <!--            <p>Выбранный элемент: {{ selectedItem }}</p>-->
         </div>
         <div class="lk-add-right">
@@ -122,7 +123,11 @@ export default {
     },
     changeSlide(slide) {
       this.activeSlide = slide;
-    }
+    },
+    returnToPage() {
+      this.$refs.myElement.style.display = "flex";
+      this.$refs.myElement2.style.display = "none";
+    },
   }
 }
 </script>
@@ -164,7 +169,11 @@ export default {
   border: none;
 }
 
-.add-role {
+.clean-history:hover{
+  background: #dc0000;
+}
+
+.add-role, .back-button {
   border: none;
   display: grid;
   width: 80%;
@@ -185,6 +194,10 @@ export default {
 .lk-add-left {
   display: grid;
   align-content: space-between;
+}
+
+.lk-add-left button:hover, .lk-page-button1:hover{
+  background: #0066BB;
 }
 
 .lk-add-right{
@@ -231,6 +244,15 @@ option{
   color: #000000;
 
   mix-blend-mode: normal;
+}
+
+.lk-pagep{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0
 }
 
 .lk-left-heading{
@@ -304,7 +326,7 @@ option{
 
 .lk-header{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 80%;
   position: sticky;
@@ -347,7 +369,26 @@ option{
   color: #000;
 }
 
-.lk-page-button1, .lk-page-button2{
+.lk-page-button1{
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 30px;
+  border: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: center;
+  text-transform: uppercase;
+  background: #525252;
+
+  color: #FFFFFF;
+}
+
+.lk-page-button2{
+  background-color: #F40000;
   border-radius: 10px;
   width: 100%;
   padding: 10px 30px;
@@ -362,6 +403,10 @@ option{
   text-transform: uppercase;
 
   color: #FFFFFF;
+}
+
+.lk-page-button2:hover{
+  background-color: #dc0000;
 }
 
 .cut-11 {

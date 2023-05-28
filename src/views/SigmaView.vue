@@ -7,12 +7,14 @@
     <div class="sigma-footer">
       <div class="sigma-role-dropdown">
         <DropDown class="DropDown-text" />
-        <input
-          class="input-footer-sigma"
-          type="text"
-          placeholder="Введите ваш запрос"
-        />
-        <img src="../assets/footer-icon-sigma.svg" alt="Картинка" />
+        <div style="display: flex; justify-content: space-between; width: 100%">
+          <input
+              class="input-footer-sigma"
+              type="text"
+              placeholder="Введите ваш запрос"
+          />
+          <img src="../assets/footer-icon-sigma.svg" alt="Картинка" />
+        </div>
       </div>
     </div>
   </div>
@@ -28,19 +30,23 @@ export default {
 };
 </script>
 
-
-
-
-
 <style>
 
 
 @media (max-width: 715px) {
-  .sigma-role-dropdown {
+  .sigma .sigma-role-dropdown {
     flex-direction: column;
-    gap: 24px;
-    padding: 16px;
-    height: auto;
+  }
+
+  .sigma-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 4px 17px rgb(0 0 0 / 17%);
+    border-radius: 15px;
+    height: 100px;
+    width: 100%;
   }
 
 }
@@ -53,8 +59,6 @@ export default {
     line-height: 18px;
   }
 }
-
-
 
 .input-footer-sigma {
   border: none;
@@ -80,10 +84,8 @@ export default {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0 0 0 32px;
   width: 100%;
-  max-width: 1000px;
-  padding-right: 34px;
+  padding: 20px 35px;
 }
 
 .sigma-main {
@@ -104,9 +106,9 @@ export default {
   background: #ffffff;
   box-shadow: 0px 4px 17px rgb(0 0 0 / 17%);
   border-radius: 15px;
-  width: 1274px;
-  height: 72px;
+  height: 100px;
   width: 100%;
   max-width: 1000px;
 }
+
 </style>

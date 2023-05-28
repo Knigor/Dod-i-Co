@@ -32,8 +32,7 @@ select {
   outline: none;
   background: #e7e7e7;
   border-radius: 8px;
-  max-width: 328px;
-  height: 44px;
-  padding-left: 12px;
+  max-width: 100%;
+  padding: 10px 12px;
 }
 </style>
