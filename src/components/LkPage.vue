@@ -139,30 +139,40 @@ export default {
 
 <style>
 
-@media (max-width: 650px) {
-  .lk-add{
+@media (max-width: 850px) {
+  .lk-add {
     flex-direction: column;
     row-gap: 40px;
   }
 
-  .lk-add-left{
+  .lk-add-left {
     row-gap: 25px;
   }
 
-  .lk-add-right{
+  .lk-add-right {
     row-gap: 25px;
   }
 
-  .sigma-header .header-nav-text, .sigma-header .header-nav-text2{
+  .sigma-header .header-nav-text, .sigma-header .header-nav-text2 {
     font-size: 14px;
   }
 
-  .lk-add-right .lk-right-heading{
+  .lk-add-right .lk-right-heading {
     font-size: 14px;
   }
 }
 
-.clean-history{
+@media (max-width: 1920px) and (min-width:850px ) {
+  .lk-main .lk-add-left {
+    row-gap: 20px;
+  }
+
+  .lk-main .lk-add{
+    width: 80%;
+  }
+}
+
+.clean-history {
   display: grid;
   width: 100%;
   padding: 10px 30px;
@@ -180,6 +190,7 @@ export default {
   background: #F40000;
   border-radius: 10px;
   border: none;
+  align-items: center;
 }
 
 .clean-history:hover{
