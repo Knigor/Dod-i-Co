@@ -3,9 +3,10 @@
     <div class="main-page"
          :style="{ backgroundImage:
        `url(${images[currentImageIndex]})` }">
-      <div class="main-page-p">
+      <div class="main-page-p"
+           ref="myElement">
         <h1 class="main-heading">SIGMAGPT -</h1>
-        <p>
+        <p class="main-text">
           Исскуственный <br> интелект,
           <br>который <br>
           понимает вас
@@ -41,9 +42,9 @@ export default {
     return{
       isScrolling: false,
       images:[
-          require('@/assets/1.jpg'),
-          require('@/assets/2.jpg'),
-          require('@/assets/3.jpg')
+        require('@/assets/1.jpg'),
+        require('@/assets/2.jpg'),
+        require('@/assets/3.jpg')
       ],
       currentImageIndex: 0,
       items:[
@@ -122,16 +123,16 @@ export default {
     },
     nextImage() {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-    }
+    },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     this.startSlideShow();
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
     this.stopSlideShow();
-  }
+  },
 };
 </script>
 
@@ -139,14 +140,8 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-@media (max-width: 850px) and (min-width: 200px) {
-  .buttons{
-    flex-direction: column;
-    row-gap: 15px;
-  }
-  a{
-    width: 100%;
-  }
+@media (max-width: 850px) {
+
 }
 
 .scrollable-block-under2 p{
@@ -196,16 +191,15 @@ export default {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  font-size: 2.1vw;
-  line-height: 4vw;
+  font-size: calc(2.1vw + 10px);
+  line-height: calc(3vw + 20px);
   text-align: center;
-  width: 70%;
+  width: 80%;
 
   color: #0D082C;
 }
 
 .scrollable-block {
-  overflow-y: auto;
   height: 100vh;
   background: linear-gradient(180deg, #C6C6C6 0%, rgba(160, 160, 160, 0) 100%);
   display: grid;
@@ -253,8 +247,6 @@ export default {
   margin: 0.78vw 0;
 }
 
-
-
 a{
   font-family: 'Montserrat';
   font-style: normal;
@@ -265,7 +257,7 @@ a{
   border-radius: 10px;
   text-align: center;
   border: none;
-  padding: 0.26vw 2vw;
+  padding: 0.26vw 1.5vw;
   text-decoration: none;
   color: #000;
 }
@@ -277,7 +269,7 @@ a{
   column-gap: 2.60vw;
 }
 
-p{
+.main-text{
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;

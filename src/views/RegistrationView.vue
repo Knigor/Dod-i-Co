@@ -272,7 +272,6 @@ p{
 }
 
 .placeholder {
-  color: #65657b;
   left: 20px;
   line-height: 14px;
   pointer-events: none;
@@ -286,7 +285,7 @@ p{
   font-size: 12px;
   line-height: 15px;
 
-  color: #9891a0;
+  color: #000000;
 }
 
 .input:focus ~ .placeholder,
