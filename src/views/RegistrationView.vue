@@ -1,7 +1,7 @@
 <template>
   <div class="registration">
     <div class="window-registration">
-      <RouterLink to="/"><img class="krest-1" src="../assets/krest.svg"/></RouterLink>
+      <RouterLink to="/"><img class="krest-1" src="@/assets/krest.svg"/></RouterLink>
       <div class="header-registration">
         <div class="name-into">
           <RouterLink :to="{ name: 'auth' }"><p class="login-text">Вход</p></RouterLink>
