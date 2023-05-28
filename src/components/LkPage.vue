@@ -57,7 +57,7 @@
         </div>
         <div class="lk-add-right">
           <h1 class="lk-right-heading">История чатов</h1>
-          <div class="slider-container">
+          <div class="slider-container" :style="{ display: showSlider ? 'block' : 'none' }">
             <div class="slider">
               <div v-for="item in item_block" :key="item.id" class="slide" :class="{ active: activeSlide === item.id }">
                 <h3>{{ item.content }}</h3>
@@ -67,7 +67,8 @@
               <button v-for="item in item_block" :key="item.id" @click="changeSlide(item.id)" :class="{ active: activeSlide === item.id }">{{ item.id }}</button>
             </div>
           </div>
-          <button class="clean-history">Очистить историю чата</button>
+          <button class="clean-history"
+                  @click="clearHistory">Очистить историю чата</button>
         </div>
       </div>
 
@@ -87,6 +88,7 @@ export default {
       showRoleSettings: false,
       selectedItem: '',
       activeSlide: 1,
+      showSlider: true,
       items: [
         { id: 1, name: 'По умолчанию' },
         { id: 2, name: 'Избранное' },
@@ -128,6 +130,9 @@ export default {
       this.$refs.myElement.style.display = "flex";
       this.$refs.myElement2.style.display = "none";
     },
+    clearHistory() {
+      this.showSlider = false;
+    },
   }
 }
 </script>
@@ -146,6 +151,14 @@ export default {
 
   .lk-add-right{
     row-gap: 25px;
+  }
+
+  .sigma-header .header-nav-text, .sigma-header .header-nav-text2{
+    font-size: 14px;
+  }
+
+  .lk-add-right .lk-right-heading{
+    font-size: 14px;
   }
 }
 
@@ -329,7 +342,6 @@ option{
   justify-content: center;
   align-items: center;
   width: 80%;
-  position: sticky;
   top: 0;
   padding: 0 0 10px 0;
   z-index: 1;
@@ -339,15 +351,17 @@ option{
   display: grid;
   flex-direction: column;
   justify-items: center;
-  row-gap: 70px;
+  width: 100%;
+  background: #525252;
 }
 
-.lk-main{
+.lk-main {
   background: #525252 no-repeat center center;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
+
 .lk-page {
   display: flex;
   flex-direction: column;

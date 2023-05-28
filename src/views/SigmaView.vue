@@ -2,7 +2,8 @@
   <div class="sigma">
     <HeaderComponents />
     <div class="sigma-main">
-      <p>dsadsad</p>
+      <p>{{ response }}</p>
+<!--      <input type="text" v-model="responseField" />-->
     </div>
     <div class="sigma-footer">
       <div class="sigma-role-dropdown">
@@ -12,8 +13,9 @@
               class="input-footer-sigma"
               type="text"
               placeholder="Введите ваш запрос"
+              v-model="query"
           />
-          <img src="../assets/footer-icon-sigma.svg" alt="Картинка" />
+          <img src="../assets/footer-icon-sigma.svg" alt="Картинка" @click.prevent="sendQuery"/>
         </div>
       </div>
     </div>
@@ -23,21 +25,67 @@
 <script>
 import HeaderComponents from "../components/HeaderComponents.vue";
 import DropDown from "@/components/DropDown.vue";
+import axios from "axios";
 
 export default {
   name: "SigmaView",
+  data() {
+    return {
+      query: "",
+      response: "",
+      responseField: ""
+    };
+  },
   components: { HeaderComponents, DropDown },
+  methods: {
+    async sendQuery() {
+      try {
+        const apiUrl = 'http://172.20.10.5:8080/api/chat';
+        const response = await axios.post(apiUrl, { message: this.query });
+
+        // this.responseField = response.data.reply;
+        this.response = response.data.reply;
+        // console.log(response.data.reply);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
 };
 </script>
 
 <style>
+
+.sigma-footer img{
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.sigma-footer img:hover{
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.sigma-main{
+  padding: 20px 15px;
+}
+
+.sigma-main p{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+
 
 
 @media (max-width: 715px) {
   .sigma .sigma-role-dropdown {
     flex-direction: column;
   }
-
   .sigma-footer {
     display: flex;
     flex-direction: row;
@@ -49,6 +97,14 @@ export default {
     width: 100%;
   }
 
+
+}
+
+@media (max-width: 1000px){
+  .sigma-main p{
+    font-size: 12px;
+    line-height: 20px;
+  }
 }
 
 /* Медиа-запрос для экранов шириной меньше 576 пикселей */
