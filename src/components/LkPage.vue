@@ -346,6 +346,7 @@ option{
   justify-content: space-around;
   align-items: stretch;
   width: 80%;
+  max-width: 1000px;
 }
 
 .lk-header{
