@@ -1,37 +1,82 @@
 <template>
   <div class="registration">
     <div class="window-registration">
+      <RouterLink to="/"><img class="krest" src="../assets/krest.svg"/></RouterLink>
       <div class="header-registration">
         <div class="name-into">
           <RouterLink to="/auth"><p class="login-text">Вход</p></RouterLink>
           <RouterLink to="/registration"
-            ><p class="registration-text">Регистрация</p></RouterLink
+            ><p class="registration-text-auth">Регистрация</p></RouterLink
           >
         </div>
       </div>
       <div class="main-registration">
         <div class="input-container ic2">
-          <input id="firstname" class="input" type="text" placeholder=" " />
+          <input v-model="username" class="input" type="text" placeholder=" " />
           <div class="cut-2"></div>
           <label for="firstname" class="placeholder">Логин</label>
         </div>
         <div class="input-container ic2">
-          <input id="firstname" class="input" type="password" placeholder=" " />
+          <input
+            v-model="password"
+            class="input"
+            type="password"
+            placeholder=" "
+          />
           <div class="cut-3"></div>
           <label for="firstname" class="placeholder">Введите пароль</label>
         </div>
       </div>
       <div class="footer-registration">
-        <RouterLink to="/sigma"><button class="submit">
-          <p class="button-registration">Вход</p>
-        </button></RouterLink>
+        <RouterLink to="/sigma"
+          ><button class="submit">
+            <p class="button-registration">Вход</p>
+          </button></RouterLink
+        >
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      const apiUrl = "http://172.20.10.5:8080/api/login"; 
+
+      const requestData = {
+        login: this.username,
+        password: this.password,
+      };
+
+      axios
+        .post(apiUrl, requestData)
+        .then((response) => {
+          
+          console.log(response.data);
+          if (response.data.success) {
+            
+            this.$router.push("/sigma");
+          } else {
+            
+            console.log("Ошибка авторизации");
+          }
+        })
+        .catch((error) => {
+          
+          console.error(error);
+        });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -39,10 +84,16 @@ export default {};
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&family=Noto+Sans+Gujarati&family=Noto+Sans:wght@500&family=Oswald:wght@400;500;700&display=swap");
 
 
-p{
-  padding: 0;
+.krest{
+  display: flex;
+  margin-left: 300px;
+
 }
 
+
+p {
+  padding: 0;
+}
 
 .login-text {
   position: relative;
@@ -55,9 +106,8 @@ p{
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #E3C7FF;
+  background-color: #e3c7ff;
 }
-
 
 .footer-registration {
   padding-top: 20px;
@@ -108,7 +158,7 @@ p{
   text-transform: uppercase;
 }
 
-.registration-text {
+.registration-text-auth {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -118,6 +168,7 @@ p{
 
   text-align: center;
   text-transform: uppercase;
+  color: #525252;
 }
 
 .name-into {
@@ -227,7 +278,7 @@ p{
   top: -13px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 58px;
+  width: 94px;
 }
 .cut-4 {
   background-color: #e3c7ff;
@@ -277,8 +328,6 @@ p{
 .input:not(:placeholder-shown) ~ .placeholder {
   color: #808097;
 }
-
-
 
 .submit {
   background: #525252;

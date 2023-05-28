@@ -1,35 +1,35 @@
 <template>
   <div class="registration">
     <div class="window-registration">
+      <RouterLink to="/"><img class="krest-1" src="../assets/krest.svg"/></RouterLink>
       <div class="header-registration">
         <div class="name-into">
-          <RouterLink to="/auth"><p class="login-text">Вход</p></RouterLink>
-          <RouterLink to="/registration"
-            ><p class="registration-text">Регистрация</p></RouterLink
-          >
+          <RouterLink :to="{ name: 'auth' }"><p class="login-text">Вход</p></RouterLink>
+          <RouterLink v-if="!isButtonDisabled" :to="{ name: 'registration' }"><p class="registration-text">Регистрация</p></RouterLink>
+          <p v-else class="registration-text">Регистрация</p>
         </div>
       </div>
       <div class="main-registration">
         <div class="input-container ic1">
-          <input id="firstname" class="input" type="text" placeholder=" " />
+          <input v-model="email" id="firstname" class="input" type="text" placeholder=" " />
           <div class="cut-1"></div>
           <label for="firstname" class="placeholder">Введите почту</label>
         </div>
         <div class="input-container ic2">
-          <input id="firstname" class="input" type="text" placeholder=" " />
+          <input v-model="username" id="firstname" class="input" type="text" placeholder=" " />
           <div class="cut-2"></div>
           <label for="firstname" class="placeholder">Логин</label>
         </div>
         <div class="input-container ic2">
-          <input id="firstname" class="input" type="password" placeholder=" " />
+          <input v-model="password" id="firstname" class="input" type="password" placeholder=" " />
           <div class="cut-3"></div>
           <label for="firstname" class="placeholder">Придумайте пароль</label>
         </div>
       </div>
       <div class="footer-registration">
-      <RouterLink to="/auth"><button class="submit">
+        <button :disabled="isButtonDisabled" @click="register" class="submit">
           <p class="button-registration">Зарегистрироваться</p>
-        </button></RouterLink>  
+        </button>  
       </div>
     </div>
   </div>
@@ -37,8 +37,46 @@
 
 <script>
 import { RouterLink } from "vue-router";
+import axios from 'axios';
 
-export default { components: { RouterLink } };
+axios.defaults.baseURL = 'http://172.20.10.5:8080/api/';
+export default { 
+  components: 
+  { RouterLink 
+  },
+  methods: {
+    async register() {
+      try {
+        const response = await axios.post('register', {
+          email: this.email,
+          login: this.username,
+          password: this.password
+        });
+        console.log(response.data); 
+
+        this.$router.push('/sigma');
+      } catch (error) {
+        console.error(error); 
+        if (error.response && error.response.data && error.response.data.errors && error.response.data.errors.login){
+          if (error.response.data.errors.login.includes("The login has already been taken.")) {
+            // Устанавливаем флаг, который будет указывать на неактивность кнопки
+            this.isButtonDisabled = true;
+          }
+        }
+      }
+    }
+  },
+  data() {
+    return {
+      email: '',
+      username: '',
+      password: '',
+      isButtonDisabled: false
+    };
+  },
+
+  }
+  ;
 </script>
 
 <style>
@@ -49,11 +87,17 @@ p{
   padding: 0;
 }
 
+.krest-1{
+  display: flex;
+  margin-left: 300px;
+  padding-bottom: 22px;
+}
+
 
 .header-registration {
   display: flex;
   margin: -40px;
-  padding-top: 31px;
+
 }
 
 .footer-registration {
@@ -95,6 +139,8 @@ p{
   gap: 92px;
   padding-top: 102px;
 }
+
+
 
 .login-text {
   font-family: "Montserrat";
@@ -225,7 +271,7 @@ p{
   top: -13px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 103px;
+  width: 90px;
 }
 .cut-2 {
   background-color: #e3c7ff;
@@ -236,7 +282,7 @@ p{
   top: -13px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 58px;
+  width: 52px;
 }
 .cut-3 {
   background-color: #e3c7ff;
@@ -247,7 +293,7 @@ p{
   top: -13px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 134px;
+  width: 112px;
 }
 .cut-4 {
   background-color: #e3c7ff;
