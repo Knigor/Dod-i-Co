@@ -42,9 +42,9 @@ export default {
     return{
       isScrolling: false,
       images:[
-          require('@/assets/1.jpg'),
-          require('@/assets/2.jpg'),
-          require('@/assets/3.jpg')
+        require('@/assets/1.jpg'),
+        require('@/assets/2.jpg'),
+        require('@/assets/3.jpg')
       ],
       currentImageIndex: 0,
       items:[
@@ -140,33 +140,8 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-@media (max-width: 850px) and (min-width: 200px) {
+@media (max-width: 850px) {
 
-  .buttons{
-    flex-direction: column;
-    row-gap: 15px;
-  }
-
-  a{
-    width: 100%;
-  }
-
-  .scrollable-block{
-    padding: 1.56vw 0;
-  }
-
-  .main-text{
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .main-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .scrollable-block-under2 p{
